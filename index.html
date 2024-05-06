@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo List</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>My Today List</h1>
+
+  <div class="import-options">
+    <button onclick="clearTodos()" style="background-color: red;">Clear All</button> <!-- Added button to clear all todos -->
+    <span> | </span>
+    <button onclick="exportTodos()">Backup my list</button> <!-- Added export button -->
+    <label for="importFile" class="file-label" style="    padding: 10px;font-size: 14px;border: none;border-radius: 4px;cursor: pointer;background-color: #4CAF50;color: white;">
+        Restore from a backup file
+    </label>
+    <input style="display: none;" type="file" id="importFile" accept=".json" onchange="importTodos(event)"> <!-- Added file input for import -->
+  </div>
+  <br>
+  <br>
+  <input type="text" id="todoInput" placeholder="Enter new todo">
+  <button onclick="addTodo()">Add Todo</button>
+  <ul id="todoList" class="sortable"></ul>
+  <h2>Completed</h2>
+  <ul id="completedList"></ul>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
